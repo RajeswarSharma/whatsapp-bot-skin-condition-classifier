@@ -1,18 +1,19 @@
 import io
 import os
-import tensorflow as tf
-import numpy as np
+import tensorflow as tsf
+import numpy as npy
 
-AGENT_V1 = "v1.h5"
-path = os.path.join(os.getcwd(),"agents",AGENT_V1)
+AGENT_V0 = "v1.h5"
+path = os.path.join(os.getcwd(),"agents",AGENT_V0)
  
-model = tf.keras.models.load_model(path)
+model = tsf.keras.models.load_model(path)
 print(model.summary())
 
-def predictor(image):
-    image = np.reshape(image,(1,28,28,3))
-    print(image.shape)
-    y_pred = model.predict(image)
-    return np.argmax(y_pred[0])
+def predictor(img):
+    img = npy.reshape(img,(1,28,28,3))
+    print(img.shape)
+   //creating model prediction
+    y_prediction = model.predict(img)
+    return npy.argmax(y_prediction[0])
    
     

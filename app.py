@@ -8,6 +8,15 @@ app = Flask(__name__)
 client_SID = "AC07b717405115f000412bae282aaead25"
 authToken = "fd7bfea8a710454cd6d6b40623e769f4"
 
+def disease():
+    nv= 'Melanocytic nevi (nv)'
+    mel= 'Melanoma (mel)'
+    bkl= 'Benign keratosis-like lesions (bkl)'
+    bcc= 'Basal cell carcinoma (bcc)'
+    akiec= 'Actinic keratoses (akiec'
+    vasc= 'Vascular lesions (vasc)'
+    df='Dermatofibroma (df)'
+
 client = Client(client_SID,authToken)
 @app.route("/bot",methods=["POST"])
 def bot():

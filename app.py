@@ -13,8 +13,8 @@ client = Client(client_SID,authToken)
 def bot():
     sender = request.values.get("From")
     if request.values['NumMedia'] != '0' :
-        image_url = request.values['MediaUrl0']
-        body = driver(image_url) 
+        img_url = request.values['MediaUrl0']
+        body = driver(img_url) 
     else:
         body="Please upload a *single* image of the affected area"
     message = client.messages.create(to=sender,from_="whatsapp:+14155238886",body=body)

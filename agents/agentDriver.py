@@ -12,8 +12,11 @@ print(model.summary())
 def predictor(img):
     img = npy.reshape(img,(1,28,28,3))
     print(img.shape)
-   //creating model prediction
+    #creating model prediction
     y_prediction = model.predict(img)
     return npy.argmax(y_prediction[0])
    
-    
+def test_accuracy(img,pred):
+    get_shape=npy.reshape(img(1,28,28,3))
+    print(img.shape)
+    y_test=pred.mean

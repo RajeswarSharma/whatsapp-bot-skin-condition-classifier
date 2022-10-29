@@ -25,17 +25,17 @@ label_mapping = {
 }
 model_res = 28
 
-def driver(image_url):
-    image = pull_resize_image(image_url)
-    index = predictor(image)
+def driver(img_url):
+    img = pull_resize_image(img_url)
+    index = predictor(img)
     return messageGen(index)
     
 
 # Pulling image from twilio url
-def pull_resize_image(image_url):
-    file = requests.get(image_url).content
-    image = Image.open(io.BytesIO(file))
-    cvImage = cv.cvtColor(numpy.array(image), cv.COLOR_RGB2BGR)
+def pull_resize_image(img_url):
+    file = requests.get(img_url).content
+    img = Image.open(io.BytesIO(file))
+    cvImage = cv.cvtColor(numpy.array(img), cv.COLOR_RGB2BGR)
     cvImage = cv.resize(cvImage,(model_res,model_res),interpolation=cv.INTER_AREA)
     return cvImage
 

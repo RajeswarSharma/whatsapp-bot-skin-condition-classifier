@@ -6,7 +6,7 @@ from controller.util import driver
 app = Flask(__name__)
 
 client_SID = "AC07b717405115f000412bae282aaead25"
-authToken = "9471710e4ac5e349cbc9a39b139b6a5e"
+authToken = "838103e493ea531ac1c669f88c3efa81"
 
 def disease():
     nv= 'Melanocytic nevi (nv)'
